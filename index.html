@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiruthick Sabarish S – Portfolio</title>
+  <style>
+    :root {
+      --bg: #eaeaea;
+      --card: #ffffff;
+      --primary: #222;
+      --muted: #555;
+      --accent: #333;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0; padding: 0;
+      background: var(--bg);
+      color: var(--primary);
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background: #333;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeDown 1.5s ease;
+    }
+    header h1 { margin: 0; font-size: 2.8rem; }
+
+    /* Role Animation */
+    .role {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ffeb3b;
+      height: 1.5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .role span {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideWords 9s infinite;
+    }
+    .role span:nth-child(1) { animation-delay: 0s; }
+    .role span:nth-child(2) { animation-delay: 3s; }
+    .role span:nth-child(3) { animation-delay: 6s; }
+    @keyframes slideWords {
+      0% { opacity: 0; transform: translateY(20px); }
+      10% { opacity: 1; transform: translateY(0); }
+      30% { opacity: 1; transform: translateY(0); }
+      40% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 0; }
+    }
+
+    header p { margin: 10px 0; font-size: 1.1rem; }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .btn:hover { background: #555; transform: translateY(-3px); }
+
+    /* Nav */
+    nav {
+      background: #444;
+      text-align: center;
+      padding: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      animation: slideDown 1s ease;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #ffeb3b; }
+
+    /* Sections */
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 25px;
+      background: var(--card);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(50px) scale(0.98);
+    }
+    section.show {
+      animation: fadeInUp 1s ease forwards;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    h2 {
+      border-left: 5px solid #666;
+      padding-left: 10px;
+      color: #222;
+      animation: fadeRight 1s ease;
+    }
+
+    /* Skills */
+    .skill {
+      margin-bottom: 20px;
+    }
+    .skill-name {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .progress {
+      width: 100%;
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 25px;
+    }
+    .progress-bar {
+      height: 100%;
+      background: var(--accent);
+      color: white;
+      text-align: right;
+      padding-right: 10px;
+      line-height: 25px;
+      border-radius: 20px;
+      width: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Contact */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+    .contact-item img {
+      width: 24px; height: 24px;
+      margin-right: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      animation: fadeUp 1.5s ease;
+    }
+
+    /* Animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeRight {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(60px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Kiruthick Sabarish S</h1>
+    <p class="role">
+      <span>Embedded Systems Engineer</span>
+      <span>IoT Developer</span>
+      <span>Innovator</span>
+    </p>
+    <p><a href="mailto:sabarishkruthick@gmail.com" style="color:#ffeb3b;">sabarishkruthick@gmail.com</a> | +91 93847 76342</p>
+    <a class="btn" href="vk resume.pdf" download>📄 Download Resume</a>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a motivated and detail-oriented <strong>Electronics and Communication Engineering student</strong> with a strong passion for <strong>Embedded Systems, IoT, and real-time applications</strong>. I enjoy building innovative projects, learning emerging technologies, and applying problem-solving skills to create practical solutions. With hands-on experience in <strong>microcontrollers, circuit design, and programming</strong>, I strive to contribute effectively to technical projects while continuously improving my knowledge and skills.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill">
+      <div class="skill-name">C / Embedded C</div>
+      <div class="progress"><div class="progress-bar" data-width="85">0%</div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Java</div>
+      <div class="progress"><div class="progress-bar" data-width="70">0%</div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">ESP32 / IoT</div>
+      <div class="progress"><div class="progress-bar" data-width="80">0%</div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Arduino</div>
+      <div class="progress"><div class="progress-bar" data-width="90">0%</div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">PCB Design</div>
+      <div class="progress"><div class="progress-bar" data-width="75">0%</div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Problem Solving</div>
+      <div class="progress"><div class="progress-bar" data-width="80">0%</div></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <h3>Smart Ration Dispensing System</h3>
+    <p>Developed an ESP32-powered automated ration dispenser using load cell, keypad, and servo motor.
+
+Integrated with ThingSpeak cloud for real-time monitoring and data logging.
+
+Improved accuracy, transparency, and efficiency in ration distribution systems.
+
+Applied skills in embedded C, IoT hardware integration, and sensor interfacing.</p>
+    <h3>Smart Home Automation</h3>
+    <p>Designed and implemented a microcontroller-based automation system for household appliances.
+
+Enhanced energy efficiency and convenience through IoT-enabled control.
+
+Built a scalable and user-friendly solution with Arduino, relays, and sensors.
+
+Strengthened expertise in IoT protocols, circuit design, and embedded programming.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>PSR Engineering College</strong> — B.E. Electronics & Communication Engineering (2022–2026)</p>
+    <p>CGPA: 7.814 / 10 (up to 6th semester)</p>
+  </section>
+
+  <section id="achievements">
+    <h2>Achievements & Certifications</h2>
+    <ul>
+      <li>Hackathon – “Euphoria” (2024)</li>
+      <li>Infosys – Basics of C Programming</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-item"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="email"><a href="mailto:sabarishkruthick@gmail.com">sabarishkruthick@gmail.com</a></div>
+    <div class="contact-item"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="phone">+91 93847 76342</div>
+    <div class="contact-item"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin"><a href="https://www.linkedin.com/in/kiruthick-sabarish-s-2786912ab">LinkedIn</a></div>
+    <div class="contact-item"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="github"><a href="https://github.com/Sabarish1000">GitHub</a></div>
+  </section>
+
+  <footer>
+    © <script>document.write(new Date().getFullYear());</script> Kiruthick Sabarish S • All Rights Reserved
+  </footer>
+
+  <!-- Scroll Reveal + Skill Counter Script -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    function reveal() {
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100 && rect.bottom > 100) {
+          sec.classList.add("show");
+        } else {
+          sec.classList.remove("show");
+        }
+      });
+    }
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
+
+    // Skill Progress Counter
+    function animateSkills() {
+      document.querySelectorAll(".progress-bar").forEach(bar => {
+        const rect = bar.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight - 50;
+        if (inView && !bar.classList.contains("animated")) {
+          bar.classList.add("animated");
+          let target = parseInt(bar.getAttribute("data-width"));
+          let width = 0;
+          let counter = setInterval(() => {
+            if (width >= target) {
+              clearInterval(counter);
+            } else {
+              width++;
+              bar.style.width = width + "%";
+              bar.textContent = width + "%";
+            }
+          }, 20);
+        }
+      });
+    }
+    window.addEventListener("scroll", animateSkills);
+    window.addEventListener("load", animateSkills);
+  </script>
+
+</body>
+</html>
